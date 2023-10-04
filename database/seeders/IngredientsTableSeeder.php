@@ -18,7 +18,9 @@ class IngredientsTableSeeder extends Seeder
         Ingredient::factory()->create([
             'title' => 'Naslov sastojka 43',
         ]);
-
+          
+        Meal::find(1)->ingredients()->attach([58, 43]);
+        Meal::find(2)->ingredients()->attach([43]);
      
     }
 }

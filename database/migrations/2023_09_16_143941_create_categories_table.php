@@ -9,9 +9,11 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('title');
+            $table->increments('id');
+            $table->integer('jela_id')->unsigned()->nullable();
+            $table->foreign('jela_id')->references('id')->on('meals')->onDelete('cascade');
+            $table->string('naziv');
+            $table->string('slug');
             
         });
     }

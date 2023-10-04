@@ -9,10 +9,11 @@ class CreateMealsTable extends Migration
     public function up()
     {
         Schema::create('meals', function (Blueprint $table) {
-            $table->id();
-            $table->string('status')->default('created'); 
-            $table->timestamps();
-            $table->softDeletes(); 
+            $table->increments('id');
+            $table->string('code');
+            $table->string('naziv');
+            $table->string('opis');
+            $table->timestamps(); 
         });
     }
 

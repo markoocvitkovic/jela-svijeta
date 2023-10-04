@@ -5,9 +5,8 @@ use App\Models\Meal;
 
 $factory->define(Meal::class, function (Faker\Generator $faker) {
     return [
-        'title' => $faker->sentence, 
-        'description' => $faker->paragraph, 
+        'title' => $faker->text(50),
+        'description' => $faker->text(200),
         'status' => $faker->randomElement(['created', 'deleted']), 
     ];
 });
-
